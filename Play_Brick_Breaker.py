@@ -271,12 +271,22 @@ w.goto(194, -238)
 w1 = 0
 
 # Giving the ball a random x direction
-rand = randint(1, 2)
-if rand == 1:
+rand = randint(3, 6)
+if rand == 3:
+    ball.dx = 2
+    ball.dy = -2
+
+elif rand == 4:
+    ball.dx = -2
+    ball.dy = -2
+
+elif rand == 5:
     ball.dx = 3
-else:
+    ball.dy = 3
+
+elif rand == 6:
     ball.dx = -3
-ball.dy = -3
+    ball.dy = -3
 
 lives = Turtle()
 lives.hideturtle()
