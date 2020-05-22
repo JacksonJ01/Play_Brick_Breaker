@@ -277,15 +277,15 @@ if rand == 3:
     ball.dy = -2
 
 elif rand == 4:
-    ball.dx = -2
+    ball.dx = -1
     ball.dy = -2
 
 elif rand == 5:
     ball.dx = 3
-    ball.dy = 3
+    ball.dy = -3
 
 elif rand == 6:
-    ball.dx = -3
+    ball.dx = -1.5
     ball.dy = -3
 
 lives = Turtle()
@@ -299,7 +299,7 @@ life = 5
 
 win = 0
 
-totally_not_lazy_mode = True
+totally_not_lazy_mode = False
 
 while life != 0:
     window.update()
