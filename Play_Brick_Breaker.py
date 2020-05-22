@@ -5,6 +5,7 @@
 # Turtle objects that will be destroyed when the ball hits it#
 from turtle import *
 from random import randint
+from time import sleep
 
 # Creating The Window
 window = Screen()
@@ -272,20 +273,39 @@ w1 = 0
 # Giving the ball a random x direction
 rand = randint(1, 2)
 if rand == 1:
-    ball.dx = 2
+    ball.dx = 3
 else:
-    ball.dx = -2
-ball.dy = -2
+    ball.dx = -3
+ball.dy = -3
 
-lazy_mode = True
+lives = Turtle()
+lives.hideturtle()
+lives.speed(0)
+lives.goto(0, 100)
+lives.penup()
+lives.color("gray")
+lives.write("Lives Left: 5", align='center', font=("Courier", 20, "bold"))
+life = 5
 
-while True:
+win = 0
+
+totally_not_lazy_mode = True
+
+while life != 0:
     window.update()
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
 
-    if lazy_mode:
+    if totally_not_lazy_mode:
         player.setx(ball.xcor())
+
+    win = a1 + b1 + c1 + d1 + e1\
+        + f1 + g1 + h1 + i1\
+        + j1 + k1 + l_1 + m1 + n1\
+        + o1 + p1 + q1 + r1\
+        + s1 + t1 + u1 + v1 + w1
+    if win == 23:
+        break
 
     if ball.xcor() < -230:
         ball.setx(-230)
@@ -311,6 +331,9 @@ while True:
         else:
             ball.dx = -1
         ball.dy *= -1
+        lives.clear()
+        life -= 1
+        lives.write(f"Lives Left: {life}", align='center', font=("Courier", 20, "bold"))
 
     # A check to see if the ball hits a brick
         # Checks the bricks A, J, and S
@@ -348,6 +371,28 @@ while True:
             s.hideturtle()
             s1 = 1
         # Checks the bricks F and O
+    if -184 < ball.xcor() < -104:
+        if f.ycor() < ball.ycor() < f.ycor() + 15 and f1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            f.hideturtle()
+            f1 = 1
+        elif f.ycor() > ball.ycor() > f.ycor() - 15 and f1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            f.hideturtle()
+            f1 = 1
+
+        if o.ycor() < ball.ycor() < o.ycor() + 15 and o1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            o.hideturtle()
+            o1 = 1
+        elif o.ycor() > ball.ycor() > o.ycor() - 15 and o1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            o.hideturtle()
+            o1 = 1
 
         # Checks the bricks B, K, and T
     if -137 < ball.xcor() < -57:
@@ -385,6 +430,28 @@ while True:
             t1 = 1
 
         # Checks the bricks G and P
+    if -88 < ball.xcor() < -8:
+        if g.ycor() < ball.ycor() < g.ycor() + 15 and g1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            g.hideturtle()
+            g1 = 1
+        elif g.ycor() > ball.ycor() > g.ycor() - 15 and g1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            g.hideturtle()
+            g1 = 1
+
+        if p.ycor() < ball.ycor() < p.ycor() + 15 and p1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            p.hideturtle()
+            p1 = 1
+        elif p.ycor() > ball.ycor() > p.ycor() - 15 and p1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            p.hideturtle()
+            p1 = 1
 
         # Checks the bricks C, L, and U
     if -40 < ball.xcor() < 40:
@@ -422,6 +489,28 @@ while True:
             u1 = 1
 
         # Checks the bricks H and Q
+    if 88 > ball.xcor() > 8:
+        if h.ycor() < ball.ycor() < h.ycor() + 15 and h1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            h.hideturtle()
+            h1 = 1
+        elif h.ycor() > ball.ycor() > h.ycor() - 15 and h1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            h.hideturtle()
+            h1 = 1
+
+        if q.ycor() < ball.ycor() < q.ycor() + 15 and q1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            q.hideturtle()
+            q1 = 1
+        elif q.ycor() > ball.ycor() > q.ycor() - 15 and q1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            q.hideturtle()
+            q1 = 1
 
         # Check the bricks D, M, and V
     if 137 > ball.xcor() > 57:
@@ -459,6 +548,28 @@ while True:
             v1 = 1
 
        # Checks the bricks I and R
+    if 184 > ball.xcor() > 104:
+        if i.ycor() < ball.ycor() < i.ycor() + 15 and i1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            i.hideturtle()
+            i1 = 1
+        elif i.ycor() > ball.ycor() > i.ycor() - 15 and i1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            i.hideturtle()
+            i1 = 1
+
+        if r.ycor() < ball.ycor() < r.ycor() + 15 and r1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            r.hideturtle()
+            r1 = 1
+        elif r.ycor() > ball.ycor() > r.ycor() - 15 and r1 == 0:
+            ball.sety(ball.ycor())
+            ball.dy *= -1
+            r.hideturtle()
+            r1 = 1
 
        # Checks the bricks E, N, and W
     if 274 > ball.xcor() > 154:
@@ -494,3 +605,15 @@ while True:
             ball.dy *= -1
             w.hideturtle()
             w1 = 1
+
+if life == 0:
+    lives.clear()
+    lives.write("You Lost!", align='center', font=("Courier", 20, "bold"))
+    sleep(4)
+    quit()
+
+elif win == 23:
+    lives.clear()
+    lives.write("You Won!", align='center', font=("Courier", 20, "bold"))
+    sleep(4)
+    quit()
