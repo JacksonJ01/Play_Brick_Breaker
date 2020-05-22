@@ -271,22 +271,14 @@ w.goto(194, -238)
 w1 = 0
 
 # Giving the ball a random x direction
-rand = randint(3, 6)
-if rand == 3:
-    ball.dx = 2
-    ball.dy = -2
+rand = randint(1, 3)
+if rand == 1:
+    ball.dx = -.5
+    ball.dy = -.5
 
-elif rand == 4:
+else:
     ball.dx = -1
-    ball.dy = -2
-
-elif rand == 5:
-    ball.dx = 3
-    ball.dy = -3
-
-elif rand == 6:
-    ball.dx = -1.5
-    ball.dy = -3
+    ball.dy = -.5
 
 lives = Turtle()
 lives.hideturtle()
@@ -300,6 +292,16 @@ life = 5
 win = 0
 
 totally_not_lazy_mode = False
+if totally_not_lazy_mode:
+    if rand == 1:
+        ball.dx = 3
+        ball.dy = -3
+    elif rand == 2:
+        ball.dx = -1.5
+        ball.dy = -3
+    elif rand == 3:
+        ball.dx = -3
+        ball.dy = -3
 
 while life != 0:
     window.update()
